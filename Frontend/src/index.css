@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@layer components {
+    .btn {
+        @apply border-2 border-white text-white  hover:bg-emerald-400/90 rounded-sm py-2 px-10 w-fit;
+    }
+
+    .btn-2 {
+        @apply bg-blue-700 h-15 px-4 rounded-2xl text-xl hover:bg-blue-600/75  border-none;
+    }
+
+    .linear-bg-1 {
+        @apply bg-gradient-to-r from-indigo-800 via-purple-500 to-pink-500;
+    }
+    .linear-bg-2 {
+        @apply bg-linear-to-r/srgb from-indigo-500 to-teal-400;
+    }
+}

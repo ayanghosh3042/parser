@@ -3,15 +3,15 @@ import { FcGoogle } from "react-icons/fc";
 import { FaFacebookSquare, FaGithub, FaLinkedin } from "react-icons/fa";
 import Button from "../Design/Button";
 import { Link, useNavigate } from "react-router";
+import InputField from "../Design/InputField";
 const LoginForm = () => {
     const navigate = useNavigate();
     return (
-        <div className="flex flex-row h-dvh bg-gradient-to-r from-indigo-800 via-purple-500 to-pink-500">
-            <div className="bg-linear-to-r/srgb from-indigo-500 to-teal-400 flex flex-col justify-center-safe items-center-safe gap-5 bg-blue-600/85 w-1/2 rounded-tr-[250px] rounded-br-[150px]  text-white">
+        <div className="flex flex-row h-dvh linear-bg-1">
+            <div className="linear-bg-2 flex flex-col justify-center-safe items-center-safe gap-5 w-1/2 rounded-tr-[250px] rounded-br-[150px]  text-white">
                 <div className="text-5xl font-extrabold">Hello, Welcome!</div>
                 <p className="text-xl">Do not have an account?</p>
                 <Button
-                    className="hover:bg-emerald-400/90"
                     onClick={() => {
                         navigate("/register");
                     }}
@@ -29,22 +29,14 @@ const LoginForm = () => {
                     <label className="text-3xl font-bold self-center">
                         Login
                     </label>
-                    <input
-                        type="text"
-                        placeholder="Username"
-                        className="bg-gray-300 h-15 px-4 rounded-2xl text-xl"
-                    />
-                    <input
+                    <InputField type="text" placeholder="Username" />
+                    <InputField
                         type="password"
                         placeholder="Password"
                         name="password"
-                        className="bg-gray-300 h-15 px-4 rounded-2xl text-xl"
                     />
                     <p className="self-end">forgot password?</p>
-                    <Button
-                        type="submit"
-                        className="bg-blue-600 h-15 px-4 rounded-2xl text-xl w-full border-none"
-                    >
+                    <Button type="submit" className="btn-2 w-full">
                         Login
                     </Button>
                 </form>

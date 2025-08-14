@@ -3,20 +3,16 @@ import Button from "../Design/Button";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookSquare, FaGithub, FaLinkedin } from "react-icons/fa";
 import { useNavigate } from "react-router";
+import InputField from "../Design/InputField";
 
 const RegisterForm = () => {
     const navigate = useNavigate();
     return (
-        <div className="h-dvh flex flex-row-reverse bg-gradient-to-r from-indigo-800 via-purple-500 to-pink-500">
-            <div className="bg-linear-to-r/srgb from-indigo-500 to-teal-400 flex flex-col justify-center-safe items-center-safe gap-5 bg-blue-600/85 w-1/2 rounded-tl-[250px] rounded-bl-[150px]  text-white">
+        <div className="h-dvh flex flex-row-reverse linear-bg-1">
+            <div className="linear-bg-2 flex flex-col justify-center-safe items-center-safe gap-5 w-1/2 rounded-tl-[250px] rounded-bl-[150px]  text-white">
                 <p className="text-5xl font-extrabold">welcome Back!</p>
                 <p className="text-xl">already have an account?</p>
-                <Button
-                    className="hover:bg-emerald-400/90"
-                    onClick={() => navigate("/login")}
-                >
-                    Login
-                </Button>
+                <Button onClick={() => navigate("/login")}>Login</Button>
             </div>
             <div className="flex flex-col gap-5 w-1/2 items-center justify-center ">
                 <form
@@ -25,31 +21,19 @@ const RegisterForm = () => {
                     }}
                     className="flex flex-col min-w-sm gap-4"
                 >
-                    <label className="text-3xl font-bold self-center">
+                    <label className="text-3xl font-bold text-white self-center">
                         Registration
                     </label>
-                    <input
-                        type="text"
-                        placeholder="Username"
-                        className="bg-gray-300 h-15 px-4 rounded-2xl text-xl"
-                    />
-                    <input
-                        type="text"
-                        placeholder="Email"
-                        className="bg-gray-300 h-15 px-4 rounded-2xl text-xl"
-                    />
-                    <input
+                    <InputField type="text" placeholder="Username" />
+                    <InputField type="text" placeholder="Email" />
+                    <InputField
                         type="text"
                         placeholder="Password"
                         name="password"
-                        className="bg-gray-300 h-15 px-4 rounded-2xl text-xl"
                     />
                     <p className="self-end">forgot password?</p>
-                    <Button
-                        type="submit"
-                        className="bg-blue-600 h-15 px-4 rounded-2xl text-xl w-full border-none"
-                    >
-                        Login
+                    <Button type="submit" className="btn-2 w-full">
+                        Register
                     </Button>
                 </form>
 
@@ -57,7 +41,11 @@ const RegisterForm = () => {
                     Register with social platforms
                 </p>
                 <div className="grid grid-cols-4 gap-10 px-2 max-w-sm text-5xl">
-                    <FcGoogle />
+                    <FcGoogle
+                        onClick={() => {
+                            alert("hello continue with google");
+                        }}
+                    />
                     <FaLinkedin />
                     <FaGithub />
                     <FaFacebookSquare />
