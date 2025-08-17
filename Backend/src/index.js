@@ -1,18 +1,16 @@
-import express from "express";
+import express, { json } from "express";
 import dotenv from "dotenv";
 import { connectDB } from "./DB/connectDB.js";
-import User from "./DB/user.model.js";
+import AuthRoute from "./routes/auth.js";
 
 dotenv.config();
 const port = process.env.PORT || 5000;
 const app = express();
 
-app.get("/", async (req, res) => {
-    await User.create({
-        name: "Ayan",
-        age: 23,
-        email: "ayan@example.com",
-    });
+app.use(json());
+app.use("/auth", AuthRoute);
+
+app.get("/", (req, res) => {
     console.log("hello bhai");
     res.status(200).send("<h1>Hello bhai</h1>");
 });

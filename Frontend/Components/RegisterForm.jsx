@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../Design/Button";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookSquare, FaGithub, FaLinkedin } from "react-icons/fa";
@@ -7,6 +7,14 @@ import InputField from "../Design/InputField";
 
 const RegisterForm = () => {
     const navigate = useNavigate();
+
+    // const [formData, setFormData] = useState({
+    //     name: "",
+    //     email: "",
+    //     password: "",
+    //     confirm_password: "",
+    // });
+
     return (
         <div className="h-dvh flex flex-row-reverse linear-bg-1">
             <div className="linear-bg-2 flex flex-col justify-center-safe items-center-safe gap-5 w-1/2 rounded-tl-[250px] rounded-bl-[150px]  text-white">
@@ -29,6 +37,11 @@ const RegisterForm = () => {
                     <InputField
                         type="text"
                         placeholder="Password"
+                        name="password"
+                    />
+                    <InputField
+                        type="text"
+                        placeholder="Confirm Password"
                         name="password"
                     />
                     <p className="self-end">forgot password?</p>
