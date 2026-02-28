@@ -1,12 +1,20 @@
 import jwt from "jsonwebtoken";
 
 const auth = (req, res, next) => {
-    const token = req.header("Authorization")?.split(" ")[1];
-    if (!token)
+    // Check for token in Authorization header or cookies
+    let token = req.header("Authorization")?.split(" ")[1];
+
+    if (!token) {
+        // Check for token in cookies
+        token = req.cookies.token;
+    }
+
+    if (!token) {
         return res.status(401).json({
             status: false,
             message: "No token, authorization denied",
         });
+    }
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
