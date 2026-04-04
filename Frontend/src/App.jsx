@@ -1,5 +1,5 @@
 import LoginForm from "../Components/LoginForm";
-import RegisterForm from "../Components/registerForm";
+import RegisterForm from "../Components/RegisterForm";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import HomePage from "../Components/HomePage";
