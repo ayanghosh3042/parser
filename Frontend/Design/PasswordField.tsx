@@ -28,6 +28,7 @@ const PasswordField = ({
           type={showPassword ? "text" : "password"}
           value={password}
           placeholder="Enter Password"
+          autoComplete="new-password"
           className="w-full h-10 rounded-md px-3 border border-gray-300"
           onChange={(e) => {
             setPassword(e.target.value);
