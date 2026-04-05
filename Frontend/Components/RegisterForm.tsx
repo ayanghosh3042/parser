@@ -6,6 +6,7 @@ import { usePasswordValidation } from "../hooks/usePasswordValidation";
 import { useState, ChangeEvent, FormEvent } from "react";
 import { Link, useNavigate } from "react-router";
 import ValidatePassword, { Confirm } from "../Logic/CheckPassword";
+import toast from "react-hot-toast";
 
 interface FormData {
     firstName: string;
@@ -70,18 +71,18 @@ const RegisterForm = () => {
         !formData.lastName.trim() ||
         !password.trim()
     ) {
-        alert("Please fill all mandatory fields");
+        toast.error("Please fill all mandatory fields");
         return;
     }
 
     // password rules validation
     if (!allValid) {
-        alert("Password does not meet requirements");
+        toast.error("Password does not meet requirements");
         return;
     }
 
         if (!agreeTerms || !agreePrivacy) {
-            alert("Please accept Terms & Privacy Policy");
+            toast.error("Please accept Terms & Privacy Policy");
             setLoading(false);
             return;
         }
@@ -98,10 +99,10 @@ const RegisterForm = () => {
             const data = await res.json();
 
             if (res.ok) {
-                alert("Registration successful!");
+                toast.success("Registration successful! Please Login.");
                 navigate("/login");
             } else {
-                alert(data.message);
+                toast.error(data.message);
             }
         } catch (err) {
             console.error(err);
@@ -221,7 +222,7 @@ const RegisterForm = () => {
         <p className="text-sm text-center text-gray-600">
           Already have an account?{" "}
           <Link
-            to="/"
+            to="/login"
             className="text-blue-600 hover:underline font-bold"
           >
             Sign In
