@@ -12,12 +12,16 @@ import {
 } from "lucide-react";
 import Logo from "../Design/Logo";
 
-const Sidebar = () => {
-  const [collapsed, setCollapsed] = useState(false);
+interface SidebarProps {
+  collapsed: boolean;
+  setCollapsed: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Sidebar : React.FC<SidebarProps> = ({ collapsed, setCollapsed }) => {
   const location = useLocation();
 
   const menuItems = [
-    { label: "Home", icon: Home, path: "/" },
+    { label: "Home", icon: Home, path: "/home" },
     { label: "Features", icon: Play, path: "/features" },
     { label: "Documentation & Help", icon: Info, path: "/documentation" },
     { label: "Settings", icon: Settings, path: "/settings" },
@@ -25,9 +29,10 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`h-screen ${collapsed ? "w-16" : "w-64"
-        } bg-[#101828] text-white flex flex-col justify-between transition-all duration-300`}
-    >
+  className={`fixed left-0 top-0 h-screen ${
+    collapsed ? "w-16" : "w-64"
+  } bg-[#101828] text-white flex flex-col justify-between transition-all duration-300`}
+>
       {/* TOP */}
       <div>
         <div className="flex items-center justify-between p-4 border-b border-gray-700">
