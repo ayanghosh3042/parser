@@ -1,9 +1,19 @@
 import React from "react";
 
-const Logo = ({ className = "", textClass = "" }) => {
+interface LogoProps {
+  className?: string;
+  textClass?: string;
+  iconBgClass?: string;
+}
+
+const Logo: React.FC<LogoProps> = ({
+  className = "",
+  textClass = "text-white",
+  iconBgClass = "bg-white",
+}) => {
   return (
     <div className={`flex items-center space-x-2 ${className}`}>
-      <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+      <div className={`w-8 h-8 ${iconBgClass} rounded-lg flex items-center justify-center`}>
         <svg
           className="w-5 h-5 text-indigo-600"
           fill="currentColor"
@@ -13,7 +23,7 @@ const Logo = ({ className = "", textClass = "" }) => {
         </svg>
       </div>
 
-      <span className={`text-xl font-bold text-white ${textClass}`}>
+      <span className={`text-xl font-bold ${textClass}`}>
         Parseon
       </span>
     </div>
