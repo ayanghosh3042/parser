@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Button from "../Design/Button";
-import HomeNavBar from "./HomeNavBar";
 import { useNavigate } from "react-router-dom";
+import Sidebar from "./Sidebar";
 
 const HomePage = () => {
     const [dragActive, setDragActive] = useState(false);
@@ -82,12 +82,12 @@ const HomePage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-600">
-            <HomeNavBar
-                isLoggedIn={isLoggedIn}
-                userEmail={userEmail}
-                onLogout={handleLogout}
-            />
+        <div className="flex">
+    {/* SIDEBAR */}
+    <Sidebar />
+
+    {/* MAIN CONTENT */}
+    <div className="flex-1 min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-600">
 
             {/* Hero Section */}
             <div className="container mx-auto px-4 py-16">
@@ -297,6 +297,7 @@ const HomePage = () => {
                     )}
                 </div>
             </div>
+        </div>
         </div>
     );
 };
