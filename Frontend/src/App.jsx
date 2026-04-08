@@ -5,6 +5,7 @@ import "./App.css";
 import HomePage from "../Components/HomePage";
 import FeaturesSection from "../Components/sidebar/features/FeaturesSection";
 import MainLayout from "../Design/MainLayout";
+import Profile from "../Components/sidebar/profile/Profile";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                     <Route path="/login" element={<LoginForm />} />
                     <Route path="/register" element={<RegisterForm />} />
                     <Route path="/features" element={<FeaturesSection />} />
+                    <Route path="/profile" element={<Profile />} />
                 </Routes>
             </MainLayout>
         </Router>
