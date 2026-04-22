@@ -2,7 +2,7 @@ import React, { useState, useEffect, ReactNode } from "react";
 import { useLocation } from "react-router";
 import Sidebar from "../Components/Sidebar";
 import Logo from "./Logo";
-
+import { Outlet } from "react-router";
 interface MainLayoutProps {
     children: ReactNode;
 }
@@ -23,7 +23,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
     return (
         <div className="flex">
-            {/* FIXED SIDEBAR */}
+            {/* SIDEBAR */}
             <Sidebar collapsed={collapsed} setCollapsed={setCollapsed} />
 
             {/* SCROLLABLE CONTENT */}
@@ -44,10 +44,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
                         />
                     </div>
                 )}
-
-                {/* PAGE CONTENT */}
-                <div>{children}</div>
-
+                <Outlet />
             </div>
         </div>
     );

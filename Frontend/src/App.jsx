@@ -10,16 +10,16 @@ import Profile from "../Components/sidebar/profile/Profile";
 function App() {
     return (
         <Router>
-            <MainLayout>
                 <Routes>
                     <Route path="/" element={<LoginForm />} />
-                    <Route path="/home" element={<HomePage />} />
                     <Route path="/login" element={<LoginForm />} />
                     <Route path="/register" element={<RegisterForm />} />
+                    <Route element={<MainLayout />}>
+                    <Route path="/home" element={<HomePage />} />
                     <Route path="/features" element={<FeaturesSection />} />
                     <Route path="/profile" element={<Profile />} />
+                    </Route>
                 </Routes>
-            </MainLayout>
         </Router>
     );
 }
