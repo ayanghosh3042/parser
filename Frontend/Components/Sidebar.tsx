@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   Home,
   Play,
@@ -8,7 +8,8 @@ import {
   LogOut,
   ChevronLeft,
   ChevronRight,
-  Info
+  Info,
+  Clock
 } from "lucide-react";
 import Logo from "../Design/Logo";
 
@@ -19,10 +20,12 @@ interface SidebarProps {
 
 const Sidebar : React.FC<SidebarProps> = ({ collapsed, setCollapsed }) => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const menuItems = [
     { label: "Home", icon: Home, path: "/home" },
     { label: "Features", icon: Play, path: "/features" },
+    { label: "History", icon: Clock, path: "/history" },
     { label: "Documentation & Help", icon: Info, path: "/documentation" },
     { label: "Settings", icon: Settings, path: "/settings" },
   ];
@@ -81,7 +84,9 @@ const Sidebar : React.FC<SidebarProps> = ({ collapsed, setCollapsed }) => {
             {!collapsed && "Profile"}
           </Link>
 
-          <button className="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-700 cursor-pointer w-full">
+          <button 
+          onClick={() => navigate("/login")}
+          className="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-700 cursor-pointer w-full">
             <LogOut size={20} />
             {!collapsed && "Logout"}
           </button>
