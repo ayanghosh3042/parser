@@ -10,6 +10,7 @@
         "preview": "vite preview"
     },
     "dependencies": {
+        "@microlink/react-json-view": "^1.31.18",
         "@tailwindcss/vite": "^4.1.11",
         "lucide-react": "^1.7.0",
         "react": "^19.1.1",
