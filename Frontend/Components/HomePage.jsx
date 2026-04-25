@@ -13,7 +13,7 @@ const HomePage = () => {
     const handleClickUpload = () => {
         fileInputRef.current?.click();
     };
-    
+
     useEffect(() => {
         // Check if user is logged in
         const loggedIn = localStorage.getItem("userLoggedIn");
@@ -163,29 +163,29 @@ const HomePage = () => {
 
                                             {/* Parse Button */}
                                             <Button
-    onClick={() => {
-        if (!selectedFile) return;
+                                                onClick={() => {
+                                                    if (!selectedFile) return;
 
-        const fileData = {
-            id: Date.now().toString(),
-            fileName: selectedFile.name,
-            fileSize: selectedFile.size,
-            uploadTime: new Date().toISOString(),
-        };
+                                                    const fileData = {
+                                                        id: Date.now().toString(),
+                                                        fileName: selectedFile.name,
+                                                        fileSize: selectedFile.size,
+                                                        uploadTime: new Date().toISOString(),
+                                                    };
 
-        // Save to localStorage
-        const existing = JSON.parse(localStorage.getItem("history") || "[]");
-        localStorage.setItem(
-            "history",
-            JSON.stringify([fileData, ...existing])
-        );
+                                                    // Save to localStorage
+                                                    const existing = JSON.parse(localStorage.getItem("history") || "[]");
+                                                    localStorage.setItem(
+                                                        "history",
+                                                        JSON.stringify([fileData, ...existing])
+                                                    );
 
-        navigate("/result", { state: fileData });
-    }}
-    className="bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition-all cursor-pointer"
->
-    Parse Document
-</Button>
+                                                    navigate("/result", { state: fileData });
+                                                }}
+                                                className="bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition-all cursor-pointer"
+                                            >
+                                                Parse Document
+                                            </Button>
                                         </div>
                                     )}
                                 </div>
