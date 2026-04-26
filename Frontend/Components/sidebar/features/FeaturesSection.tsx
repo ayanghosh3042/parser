@@ -10,7 +10,7 @@ const FeaturesSection = () => {
             Features of Parseon
         </h2>
 
-        <p className="text-gray-600 text-center mb-14 max-w-2xl mx-auto">
+        <p className="text-gray-600 dark:text-gray-300 text-center mb-14 max-w-2xl mx-auto">
           Everything you need to extract, analyze and manage documents efficiently.
         </p>
 

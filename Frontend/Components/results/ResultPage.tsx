@@ -44,7 +44,7 @@ const ResultPage: React.FC = () => {
         <div className="p-6 min-h-screen bg-gray-50">
             <ResultHeader id={id || ""} />
 
-            <div className="bg-white rounded-2xl shadow p-5 mt-4">
+            <div className="bg-white dark:bg-gray-900 rounded-2xl shadow p-5 mt-4">
                 {loading && <Loader />}
                 {error && <ErrorState message={error} />}
 

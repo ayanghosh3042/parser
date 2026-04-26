@@ -7,6 +7,8 @@ import MainLayout from "../Design/MainLayout";
 import Profile from "../Components/sidebar/profile/Profile";
 import ResultPage from "../Components/results/ResultPage";
 import HistoryPage from "../Components/sidebar/HistoryPage";
+import SettingsPage from "../Components/sidebar/settings/SettingsPage";
+import DocumentationPage from "../Components/sidebar/DocumentationPage";
 
 function App() {
     return (
@@ -21,6 +23,8 @@ function App() {
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/result" element={<ResultPage />} />
                     <Route path="/history" element={<HistoryPage />} />
+                    <Route path="/settings" element={<SettingsPage />} />
+                    <Route path="/documentation" element={<DocumentationPage />} />
                     </Route>
                 </Routes>
         </Router>

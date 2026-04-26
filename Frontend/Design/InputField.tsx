@@ -21,7 +21,7 @@ const InputField = ({ label, name, type = "text", value, placeholder, onChange }
         value={value}
         placeholder={placeholder}
         onChange={onChange}
-        className="w-full h-10 rounded-md px-3 bg-white text-gray-700 border border-gray-300 focus:outline-none placeholder:text-base"
+        className="w-full h-10 rounded-md px-3 bg-white dark:bg-gray-900 text-gray-700 border border-gray-300 focus:outline-none placeholder:text-base"
       />
     </div>
   );

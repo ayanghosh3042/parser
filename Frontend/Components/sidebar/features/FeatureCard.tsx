@@ -10,7 +10,7 @@ const FeatureCard = ({ feature }: Props) => {
   return (
     <div
       className="group relative flex flex-col w-[372px] h-[420px] border border-gray-100 
-      rounded-2xl overflow-hidden bg-white transition-all duration-500 
+      rounded-2xl overflow-hidden bg-white dark:bg-gray-900 transition-all duration-500 
       hover:scale-[1.03]"
       style={{ boxShadow: "0px 4.14px 33.14px 0px #7B61FF1A" }}
     >
@@ -31,7 +31,7 @@ const FeatureCard = ({ feature }: Props) => {
       </div>
 
       {/* Detail Section */}
-      <div className="relative flex-1 bg-white p-8 gap-4 rounded-b-2xl 
+      <div className="relative flex-1 bg-white dark:bg-gray-900 p-8 gap-4 rounded-b-2xl 
       flex flex-col items-center justify-center space-y-4">
 
         <div className="h-[40px] flex items-center justify-center">
@@ -42,7 +42,7 @@ const FeatureCard = ({ feature }: Props) => {
         </div>
 
         <div className="min-h-[60px] flex items-center justify-center text-center">
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-gray-300">
             {feature.description}
           </p>
         </div>

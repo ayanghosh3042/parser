@@ -150,7 +150,7 @@ const LoginForm = () => {
 
                     {/* PASSWORD */}
                     <div className="mt-5">
-                        <label className="text-gray-600 text-base font-medium">
+                        <label className="text-gray-600 dark:text-gray-300 text-base font-medium">
                             Password
                         </label>
 
@@ -181,7 +181,7 @@ const LoginForm = () => {
 
                     {/* CAPTCHA */}
                     <div className="mt-5">
-                        <label className="text-gray-600 text-base font-medium">
+                        <label className="text-gray-600 dark:text-gray-300 text-base font-medium">
                             Recaptcha Text
                         </label>
 
@@ -193,7 +193,7 @@ const LoginForm = () => {
                             <button
                                 type="button"
                                 onClick={generateCaptcha}
-                                className="text-gray-600 ml-4"
+                                className="text-gray-600 dark:text-gray-300 ml-4"
                             >
                                 ↻
                             </button>
@@ -222,7 +222,7 @@ const LoginForm = () => {
                                 type="checkbox"
                                 className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                             />
-                            <label htmlFor="rememberMe" className="text-gray-600 text-sm">
+                            <label htmlFor="rememberMe" className="text-gray-600 dark:text-gray-300 text-sm">
                                 Remember me for 15 days
                             </label>
                         </div>
@@ -248,7 +248,7 @@ const LoginForm = () => {
 
                     {/* REGISTER LINK */}
                     <div className="pt-4">
-                        <p className="text-sm text-center text-gray-600 bottom-0 align-text-bottom">
+                        <p className="text-sm text-center text-gray-600 dark:text-gray-300 bottom-0 align-text-bottom">
                             Don’t have an account?{" "}
                             <Link
                                 to="/register"

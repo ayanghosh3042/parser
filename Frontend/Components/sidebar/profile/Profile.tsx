@@ -64,7 +64,7 @@ const Profile = () => {
           {/* Profile Header */}
           <div className="flex justify-between px-8 relative z-20">
             <div className="flex items-start gap-4 -mt-4">
-              <div className="h-[160px] w-[160px] rounded-full border-4 border-gray z-15 shadow-lg -translate-y-12 relative bg-white overflow-hidden">
+              <div className="h-[160px] w-[160px] rounded-full border-4 border-gray z-15 shadow-lg -translate-y-12 relative bg-white dark:bg-gray-900 overflow-hidden">
                 <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
                   <LuUser className="w-18 h-18 text-gray-500" />
                 </div>
@@ -128,7 +128,7 @@ const Profile = () => {
 
           <div className="flex gap-4 px-60 py-10 ml-40">
             {/* RIGHT PANEL */}
-            <div className="w-full mx-1 bg-white rounded-2xl shadow-md px-6 py-4 space-y-3">
+            <div className="w-full mx-1 bg-white dark:bg-gray-900 rounded-2xl shadow-md px-6 py-4 space-y-3">
 
               <div className="flex gap-3">
                 <div className="w-full mx-10 my-2">

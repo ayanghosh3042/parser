@@ -219,7 +219,7 @@ const RegisterForm = () => {
           Sign Up
         </button>
 
-        <p className="text-sm text-center text-gray-600">
+        <p className="text-sm text-center text-gray-600 dark:text-gray-300">
           Already have an account?{" "}
           <Link
             to="/login"

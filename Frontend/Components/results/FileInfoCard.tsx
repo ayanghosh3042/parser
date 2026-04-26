@@ -33,8 +33,8 @@ const FileInfoCard: React.FC<FileInfoProps> = ({
     uploadTime,
 }) => {
     return (
-        <div className="bg-white rounded-2xl shadow p-5 mb-4 border">
-            <h2 className="text-xl font-semibold text-gray-800 mb-3">
+        <div className="bg-white dark:bg-gray-900 rounded-2xl shadow p-5 mb-4 border">
+            <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3">
                 File Information
             </h2>
 
@@ -42,7 +42,7 @@ const FileInfoCard: React.FC<FileInfoProps> = ({
                 {/* File Name */}
                 <div>
                     <p className="text-lg text-gray-500">File Name</p>
-                    <p className="text-base font-medium text-gray-800 break-all">
+                    <p className="text-base font-medium text-gray-800 dark:text-gray-100 break-all">
                         {fileName}
                     </p>
                 </div>
@@ -50,7 +50,7 @@ const FileInfoCard: React.FC<FileInfoProps> = ({
                 {/* File Size */}
                 <div>
                     <p className="text-lg text-gray-500">Size</p>
-                    <p className="text-base font-medium text-gray-800">
+                    <p className="text-base font-medium text-gray-800 dark:text-gray-100">
                         {formatFileSize(fileSize)}
                     </p>
                 </div>
@@ -58,7 +58,7 @@ const FileInfoCard: React.FC<FileInfoProps> = ({
                 {/* Upload Time */}
                 <div>
                     <p className="text-lg text-gray-500">Uploaded</p>
-                    <p className="text-base font-medium text-gray-800">
+                    <p className="text-base font-medium text-gray-800 dark:text-gray-100">
                         {formatDate(uploadTime)}
                     </p>
                 </div>

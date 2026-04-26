@@ -107,8 +107,8 @@ const HomePage = () => {
                     <div className="max-w-4xl mx-auto">
                         <div
                             className={`relative border-2 border-dashed rounded-2xl p-12 text-center transition-all duration-300 ${dragActive
-                                ? "border-white bg-white/10 scale-105"
-                                : "border-blue-200 bg-white/5 hover:bg-white/10"
+                                ? "border-white bg-white/10 scale-105 dark:bg-gray-900"
+                                : "border-blue-200 bg-white/5 hover:bg-white/10 dark:bg-gray-900"
                                 }`}
                             onDragEnter={handleDrag}
                             onDragLeave={handleDrag}
@@ -126,7 +126,7 @@ const HomePage = () => {
                             />
 
                             <div className="space-y-6">
-                                <div className="w-24 h-24 mx-auto bg-white/20 rounded-full flex items-center justify-center cursor-pointer" onClick={handleClickUpload}>
+                                <div className="w-24 h-24 mx-auto bg-white/20 rounded-full flex items-center justify-center cursor-pointer dark:bg-gray-900" onClick={handleClickUpload}>
                                     <svg
                                         className="w-12 h-12 text-white"
                                         fill="none"
@@ -153,7 +153,7 @@ const HomePage = () => {
                                     {selectedFile && (
                                         <div className="mt-6 space-y-4">
                                             {/* File Info */}
-                                            <div className="bg-white/20 rounded-lg p-4 text-white text-sm">
+                                            <div className="bg-white/20 dark:bg-gray-900 rounded-lg p-4 text-white text-sm">
                                                 <p><strong>File:</strong> {selectedFile.name}</p>
                                                 <p>
                                                     <strong>Size:</strong>{" "}

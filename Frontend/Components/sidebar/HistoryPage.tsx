@@ -73,7 +73,7 @@ const HistoryPage = () => {
                 )}
                 </div>
 
-            <div className="bg-white rounded-2xl shadow overflow-hidden">
+            <div className="bg-white dark:bg-gray-900 rounded-2xl shadow overflow-hidden">
                 {history.length === 0 ? (
                     <p className="p-6 text-gray-500 text-center">
                         No history available
@@ -81,7 +81,7 @@ const HistoryPage = () => {
                 ) : (
                     <table className="w-full text-sm">
                         {/* HEADER */}
-                        <thead className="bg-gray-100 text-gray-600 text-left">
+                        <thead className="bg-gray-100 text-gray-600 dark:text-gray-300 text-left">
                             <tr>
                                 <th className="px-6 py-3">File Name</th>
                                 <th className="px-6 py-3">Size</th>
@@ -99,19 +99,19 @@ const HistoryPage = () => {
                                     key={item.id}
                                     className={`border-t hover:bg-gray-50 ${
                                         index % 2 === 0
-                                            ? "bg-white"
+                                            ? "bg-white dark:bg-gray-900"
                                             : "bg-gray-50"
                                     }`}
                                 >
-                                    <td className="px-6 py-4 font-medium text-gray-800 break-all">
+                                    <td className="px-6 py-4 font-medium text-gray-800 dark:text-gray-100 break-all">
                                         {item.fileName}
                                     </td>
 
-                                    <td className="px-6 py-4 text-gray-600">
+                                    <td className="px-6 py-4 text-gray-600 dark:text-gray-300">
                                         {(item.fileSize / 1024).toFixed(2)} KB
                                     </td>
 
-                                    <td className="px-6 py-4 text-gray-600">
+                                    <td className="px-6 py-4 text-gray-600 dark:text-gray-300">
                                         {formatDate(item.uploadTime)}
                                     </td>
 
