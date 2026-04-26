@@ -13,6 +13,8 @@ import Button from "../../Design/Button";
 const ResultPage: React.FC = () => {
     const { id } = useParams();
     const [data, setData] = useState<any>(null);
+    const [brailleData, setBrailleData] = useState<string>("");
+    const [activeTab, setActiveTab] = useState<"json" | "braille">("json");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
     const location = useLocation();
@@ -31,7 +33,15 @@ const ResultPage: React.FC = () => {
                         years: 2,
                     },
                 };
+                // 🔹 Mock Braille Output
+                const mockBraille = `
+⠚⠕⠓⠝ ⠙⠕⠑
+⠑⠍⠁⠊⠇: john@example.com
+⠎⠅⠊⠇⠇⠎: React, Python
+⠑⠭⠏⠑⠗⠊⠑⠝⠉⠑: XYZ Corp (2 years)
+                `;
                 setData(mock);
+                setBrailleData(mockBraille);
                 setLoading(false);
             } catch (err) {
                 setError("Failed to load data");
@@ -55,10 +65,39 @@ const ResultPage: React.FC = () => {
                             fileSize={fileData?.fileSize}
                             uploadTime={fileData?.uploadTime}
                         />
-                        <div className="flex justify-end mb-4">
+                        <div className="flex justify-between items-center mb-4">
+                            {/* 🔹 Tabs */}
+                            <div className="flex gap-2 cursor">
+                                <Button
+                                    onClick={() => setActiveTab("json")}
+                                    className={` cursor-pointer px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${activeTab === "json"
+                                            ? "bg-blue-600 text-white shadow"
+                                            : "!bg-gray-200 !text-gray-700 dark:bg-gray-700 dark:text-gray-300 !hover:bg-gray-300 dark:hover:bg-gray-600"
+                                        }`}
+                                >
+                                    JSON Output
+                                </Button>
+                                <Button
+                                    onClick={() => setActiveTab("braille")}
+                                    className={`cursor-pointer px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${activeTab === "braille"
+                                            ? "bg-blue-600 text-white shadow"
+                                            : "!bg-gray-200 !text-gray-700 dark:bg-gray-700 dark:text-gray-300 !hover:bg-gray-300 dark:hover:bg-gray-600"
+                                        }`}
+                                >
+                                    Braille Output
+                                </Button>
+                            </div>
                             <ActionButtons data={data} id={id || ""} />
+
                         </div>
-                        <JsonViewer data={data} />
+                        {/* 🔹 Conditional Rendering */}
+                        {activeTab === "json" ? (
+                            <JsonViewer data={data} />
+                        ) : (
+                            <div className="bg-gray-900 text-white p-4 rounded-lg font-mono whitespace-pre-wrap text-sm overflow-auto border border-gray-700">
+                                {brailleData}
+                            </div>
+                        )}
                         <div className="flex justify-start mt-6">
                             <Button
                                 variant="outline"
